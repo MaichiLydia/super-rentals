@@ -1,0 +1,8 @@
+{{#filter-component users=users as |people|}}
+  {{#each people as |user|}}
+    <h1>{{user.name}}</h1>
+    <h4>{{user.occupation}}</h4>
+  {{/each}}
+{{/filter-component}}
+
+{{outlet}}
