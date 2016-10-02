@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('rentals', function() {
     this.route('show', { path: '/:slug' });
   });
+  this.route('profile');
 });
 
 export default Router;

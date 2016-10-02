@@ -14,12 +14,12 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      sessionTimeout: 1200000 // 20 min
     }
   };
 
   if (environment === 'development') {
+    ENV.APP.sessionTimeout = 1800000000;
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -31,6 +31,7 @@ module.exports = function(environment) {
     // Testem prefers this...
     ENV.baseURL = '/';
     ENV.locationType = 'none';
+    ENV.APP.sessionTimeout = null;
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;

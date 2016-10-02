@@ -1,6 +1,22 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
+const {
+  Controller,
+  inject: { service },
+  computed,
+  get
+} = Ember;
+
+export default Controller.extend({
+  session: service(),
+  isAuthenticated: computed('session.authenticated', {
+    get() {
+      let isAuthenticated = get(this, 'session').isAuthenticated();
+
+      return isAuthenticated;
+    }
+  }),
+
   actions: {
     filterByCity(param) {
       if (param !== '') {
