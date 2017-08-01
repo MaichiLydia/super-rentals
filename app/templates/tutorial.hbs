@@ -1,0 +1,8 @@
+{{#user-filter heyThere=(action 'testAction') users=users as |people|}}
+    {{#each people as |person|}}
+        <h1>{{person.name}}</h1>
+        <h3>{{person.occupation}}</h3>
+    {{/each}}
+{{/user-filter}}
+
+{{outlet}}
